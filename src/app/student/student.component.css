@@ -5,6 +5,18 @@ body
     margin-left:20px;
     margin-right:20px;
     background-color: whitesmoke;
+
 }
-
-
+h1
+{
+    display: inline;
+    color:royalblue;
+}
+form{
+    padding:10px;
+    border:2px solid black;
+}
+label
+{
+    color:green;
+}

@@ -1,0 +1,133 @@
+<!-- Sakshat Bhattarai -->
+<body>
+    <h1>Student Survey Form</h1> <br> <br>
+    <form>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
+            </div>
+        </div>
+        <div class="form-group" style="width: 500px;">
+            <label for="saddress">Address</label>
+            <input type="text" class="form-control" id="saddress" placeholder="Street Address" required>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" placeholder="City" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" placeholder="State" required>
+            </div>
+            <div class="form-group col-md-2">
+                <label for="zipcode">Zip Code</label>
+                <input type="number" class="form-control" id="zipcode" placeholder="Zip Code" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="phno">Phone Number</label>
+                <input type="tel" class="form-control" id="phno" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" required>
+            </div>
+        </div>
+        <div class="form-group" style="width: 200px;">
+            <label for="dateofs">Today's Date</label>
+            <input type="date" class="form-control" id="dateofs" placeholder="Today's Date" required>
+        </div> <br>
+        <h4>What do you like most about the campus?</h4>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="students">
+            <label class="form-check-label" for="students">
+                Students
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="location">
+            <label class="form-check-label" for="location">
+                Location
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="campus">
+            <label class="form-check-label" for="campus">
+                Campus
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="atmosphere">
+            <label class="form-check-label" for="atmosphere">
+                Atmosphere
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="dorm">
+            <label class="form-check-label" for="dorm">
+                Dorm Rooms
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="sports">
+            <label class="form-check-label" for="sports">
+                Sports
+            </label>
+        </div> <br>
+        <h4>How did you become interested in the university?</h4>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="interest" id="friends" value="">
+            <label class="form-check-label" for="friends">
+                Friends
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="interest" id="internet" value="">
+            <label class="form-check-label" for="internet">
+                Internet
+            </label>
+        </div>
+        <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="interest" id="television" value="">
+            <label class="form-check-label" for="television">
+                Television
+            </label>
+        </div>
+        <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="interest" id="other" value="">
+            <label class="form-check-label" for="other">
+                Other
+            </label>
+        </div> <br>
+        <h4>How likely are you to recommend this school to prospective students?</h4>
+        <div class="dropdown">
+            <select class="bootstrap-select">
+                <option value="1" selected="selected">Very Likely</option>
+                <option value="2">Likely</option>
+                <option value="3">Unlikely</option>
+            </select>
+        </div> <br>
+        <h4>Raffle</h4>
+        <div class="form-group" style="width: 500px;">
+            <label for="raffle">Enter at least 10 numbers from 1 to 100 seperated by comma</label>
+            <input type="text" class="form-control" id="raffle" placeholder="Enter here">
+        </div> <br>
+        <h4>Additional Comments</h4>
+        <div class="form-group" style="width: 800px;">
+            <label for="comments">Enter any additional comments</label>
+            <input type="text" class="form-control" id="comments" placeholder="Write here">
+        </div> <br>
+        <div class="submit">
+            <input type="submit" class="btn btn-primary">
+            <button type="button" class="btn btn-light">Cancel</button>
+        </div>
+    </form>
+</body>
