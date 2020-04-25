@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  sUrl: 'http://localhost:8080/webapp_war_exploded/survey'
 };
 
 /*

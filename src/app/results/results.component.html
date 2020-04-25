@@ -1,1 +1,11 @@
-<p>results works!</p>
+<body>
+    <h4>Results of all Past Surveys</h4> <br>
+    <h6>Please select:</h6> <br>
+    <div *ngFor="let info of infos">
+        <ul>
+            <li><a routerLink="./{{info}}">Survey: {{info}}</a></li>
+        </ul>
+    </div>
+</body>
+
+<router-outlet></router-outlet>

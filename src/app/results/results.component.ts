@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SurveyService } from '../survey.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-results',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultsComponent implements OnInit {
 
-  constructor() { }
+  infos: any;
+
+  constructor(private service: SurveyService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.service.getAllSurveys().subscribe((infos: any) => {
+      this.infos = infos;
+    })
   }
 
 }

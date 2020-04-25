@@ -1,14 +1,11 @@
-body
-{
+.info {
     margin-top: 10px;
     margin-bottom:50px;
     margin-left:20px;
     margin-right:20px;
     background-color: whitesmoke;
-
 }
-h4
-{
-    display: inline;
-    color:royalblue;
+
+b{
+    color: yellowgreen;
 }
