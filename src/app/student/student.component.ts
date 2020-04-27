@@ -59,5 +59,4 @@ export class StudentComponent implements OnInit {
     this.submitted = true;
   }
 
-
 }

@@ -6,7 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 
-const SURVEY_URL = environment.sUrl;
+const SURVEY_URL = `http://35.221.47.160:31000/swe645-spr20-hw3`;
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,7 @@ export class SurveyService {
    public addSurvey(surveydata: Surveydata): Observable<Surveydata> {
      let options = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
      let jsonData = JSON.stringify(surveydata);
-     return this.httpClient.post<Surveydata>(SURVEY_URL + '/addSurvey', jsonData, options)
+     return this.httpClient.post<Surveydata>(SURVEY_URL + `/addSurvey`, jsonData, options)
      .pipe(
       catchError(this.handleError)
       );

@@ -5,7 +5,6 @@
 export const environment = {
   production: false,
 
-  sUrl: 'http://localhost:8080/webapp_war_exploded/survey'
 };
 
 /*
