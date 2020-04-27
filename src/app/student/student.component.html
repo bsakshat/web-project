@@ -1,121 +1,155 @@
 <!-- Sakshat Bhattarai -->
 <body>
     <h1>Student Survey Form</h1> <br> <br>
-    <form (ngSubmit)="onSubmit()" #surveyForm="ngForm">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="firstname">First Name</label>
-                <input type="text" [(ngModel)]="data.first" class="form-control" id="firstname" placeholder="First Name" required #first="ngModel">
+    <div [hidden]="submitted">
+        <form (ngSubmit)="onSubmit()" #surveyForm="ngForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="firstname">First Name</label>
+                    <input type="text" [(ngModel)]="data.first" class="form-control" id="firstname" placeholder="First Name" name="first" #first="ngModel" required>
+                    <div [hidden]="first.pristine || first.valid" class="alert alert-danger">
+                        First Name is required.
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" [(ngModel)]="data.last" class="form-control" id="lastname" placeholder="Last Name" name="last" #last="ngModel" required> 
+                    <div [hidden]="last.pristine || last.valid" class="alert alert-danger">
+                        Last Name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="width: 500px;">
+                <label for="saddress">Address</label>
+                <input type="text" [(ngModel)]="data.address" class="form-control" id="saddress" placeholder="Street Address" name="address" #address="ngModel" required>
+                <div [hidden]="address.pristine || address.valid" class="alert alert-danger">
+                    Address is required.
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="city">City</label>
+                    <input type="text" [(ngModel)]="data.city" class="form-control" id="city" placeholder="City" name="city" #city="ngModel" required>
+                    <div [hidden]="city.pristine || city.valid" class="alert alert-danger">
+                        City is required.
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="state">State</label>
+                    <input type="text" [(ngModel)]="data.state" class="form-control" id="state" placeholder="State" name="state" #state="ngModel" required>
+                    <div [hidden]="state.pristine || state.valid" class="alert alert-danger">
+                        State is required.
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="zipcode">Zip Code</label>
+                    <input type="number" [(ngModel)]="data.zipcode" class="form-control" id="zipcode" placeholder="Zip Code" name="zipcode" #zipcode="ngModel" required>
+                    <div [hidden]="zipcode.pristine || zipcode.valid" class="alert alert-danger">
+                        Zip Code is required.
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="phno">Phone Number</label>
+                    <input type="tel" [(ngModel)]="data.phone" class="form-control" id="phno" placeholder="Phone Number" name="phone" #phone="ngModel" required>
+                    <div [hidden]="phone.pristine || phone.valid" class="alert alert-danger">
+                        Phone Number is required.
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" [(ngModel)]="data.email" class="form-control" id="email" placeholder="Email" name="email" #email="ngModel" required>
+                    <div [hidden]="email.pristine || email.valid" class="alert alert-danger">
+                        Email is required.
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" style="width: 200px;">
+                <label for="dateofs">Today's Date</label>
+                <input type="date" [(ngModel)]="data.tdate" class="form-control" id="dateofs" placeholder="Today's Date" name="tdate" #date="ngModel" required>
+                <div [hidden]="date.pristine || date.valid" class="alert alert-danger">
+                    Date is required.
+                </div>
+            </div> <br>
+            <h4>What do you like most about the campus?</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="like" value="Students" id="students" (change)="onLikes($event, 'Students')">
+                <label class="form-check-label" for="students">
+                    Students
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="like" value="Location" id="location" (change)="onLikes($event, 'Location')">
+                <label class="form-check-label" for="location">
+                    Location
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="like" value="Campus" id="campus" (change)="onLikes($event, 'Campus')">
+                <label class="form-check-label" for="campus">
+                    Campus
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="like" value="Atmosphere" id="atmosphere" (change)="onLikes($event, 'Atmosphere')">
+                <label class="form-check-label" for="atmosphere">
+                    Atmosphere
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="like" value="Dorm" id="dorm" (change)="onLikes($event, 'Dorm')">
+                <label class="form-check-label" for="dorm">
+                    Dorm
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="like" value="Sports" id="sports" (change)="onLikes($event, 'Sports')">
+                <label class="form-check-label" for="sports">
+                    Sports
+                </label>
+            </div> <br>
+            <h4>How did you become interested in the university?</h4>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="interest" id="friends" value="Friends" [(ngModel)]="data.interest">
+                <label class="form-check-label" for="friends">
+                    Friends
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="interest" id="internet" value="Internet" [(ngModel)]="data.interest">
+                <label class="form-check-label" for="internet">
+                    Internet
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <input class="form-check-input" type="radio" name="interest" id="television" value="Television" [(ngModel)]="data.interest">
+                <label class="form-check-label" for="television">
+                    Television
+                </label>
+            </div>
+            <div class="form-check disabled">
+                <input class="form-check-input" type="radio" name="interest" id="other" value="Other" [(ngModel)]="data.interest">
+                <label class="form-check-label" for="other">
+                    Other
+                </label>
+            </div> <br>
+            <h4>How likely are you to recommend this school to prospective students?</h4>
+            <div class="dropdown">
+                <select class="bootstrap-select" id="recom" name="recom" [(ngModel)]="data.recom">
+                    <option value="Very Likely" selected="selected">Very Likely</option>
+                    <option value="Likely">Likely</option>
+                    <option value="Unlikely">Unlikely</option>
+                </select>
+            </div> <br>
+            <div class="submit">
+                <input type="submit" class="btn btn-primary" value="submit" [disabled]="!validate()">
+                <button type="button" class="btn btn-light"><a routerLink="/">Cancel</a></button>
+            </div>
+        </form>
+    </div>
 
-            </div>
-            <div class="form-group col-md-6">
-                <label for="lastname">Last Name</label>
-                <input type="text" [(ngModel)]="data.last" class="form-control" id="lastname" placeholder="Last Name" required #last="ngModel"> 
-            </div>
-        </div>
-        <div class="form-group" style="width: 500px;">
-            <label for="saddress">Address</label>
-            <input type="text" [(ngModel)]="data.address" class="form-control" id="saddress" placeholder="Street Address" required #address="ngModel">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="city">City</label>
-                <input type="text" [(ngModel)]="data.city" class="form-control" id="city" placeholder="City" required #city="ngModel">
-            </div>
-            <div class="form-group col-md-4">
-                <label for="state">State</label>
-                <input type="text" [(ngModel)]="data.state" class="form-control" id="state" placeholder="State" required #state="ngModel">
-            </div>
-            <div class="form-group col-md-2">
-                <label for="zipcode">Zip Code</label>
-                <input type="number" [(ngModel)]="data.zipcode" class="form-control" id="zipcode" placeholder="Zip Code" required #zipcode="ngModel">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="phno">Phone Number</label>
-                <input type="tel" [(ngModel)]="data.phone" class="form-control" id="phno" placeholder="Phone Number" required #phone="ngModel">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="email">Email</label>
-                <input type="email" [(ngModel)]="data.email" class="form-control" id="email" placeholder="Email" required #email="ngModel">
-            </div>
-        </div>
-        <div class="form-group" style="width: 200px;">
-            <label for="dateofs">Today's Date</label>
-            <input type="date" [(ngModel)]="data.tdate" class="form-control" id="dateofs" placeholder="Today's Date" required #tdate="ngModel">
-        </div> <br>
-        <h4>What do you like most about the campus?</h4>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="students">
-            <label class="form-check-label" for="students">
-                Students
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="location">
-            <label class="form-check-label" for="location">
-                Location
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="campus">
-            <label class="form-check-label" for="campus">
-                Campus
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="atmosphere">
-            <label class="form-check-label" for="atmosphere">
-                Atmosphere
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="dorm">
-            <label class="form-check-label" for="dorm">
-                Dorm Rooms
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="sports">
-            <label class="form-check-label" for="sports">
-                Sports
-            </label>
-        </div> <br>
-        <h4>How did you become interested in the university?</h4>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="interest" id="friends" value="">
-            <label class="form-check-label" for="friends">
-                Friends
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="interest" id="internet" value="">
-            <label class="form-check-label" for="internet">
-                Internet
-            </label>
-        </div>
-        <div class="form-check disabled">
-            <input class="form-check-input" type="radio" name="interest" id="television" value="">
-            <label class="form-check-label" for="television">
-                Television
-            </label>
-        </div>
-        <div class="form-check disabled">
-            <input class="form-check-input" type="radio" name="interest" id="other" value="">
-            <label class="form-check-label" for="other">
-                Other
-            </label>
-        </div> <br>
-        <h4>How likely are you to recommend this school to prospective students?</h4>
-        <div class="dropdown">
-            <select class="bootstrap-select" id="recom">
-                <option *ngFor="let rec of recoms" [value]="rec">{{rec}}</option>
-            </select>
-        </div> <br>
-        <div class="submit">
-            <input type="submit" class="btn btn-primary">
-            <button type="button" class="btn btn-light">Cancel</button>
-        </div>
-    </form>
+    <div [hidden]="!submitted">
+        <h2>You submitted the survey.</h2>
+    </div>
 </body>
