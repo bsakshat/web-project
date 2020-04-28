@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Surveydata } from '../surveydata';
 import { SurveyService } from '../survey.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -47,7 +48,8 @@ export class StudentComponent implements OnInit {
     return true;
   }
 
-  reset() {
+  reset(form: NgForm) {
+    form.resetForm();
     this.submitted = false;
   }
 
