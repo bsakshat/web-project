@@ -47,6 +47,10 @@ export class StudentComponent implements OnInit {
     return true;
   }
 
+  reset() {
+    this.submitted = false;
+  }
+
   onSubmit() {
     this.assignData();
     if (!this.validate()) {
