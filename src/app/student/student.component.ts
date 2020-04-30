@@ -42,7 +42,6 @@ export class StudentComponent implements OnInit {
 
   validate() {
     if (!this.data.first || !this.data.last || !this.data.address || !this.data.city || !this.data.state || !this.data.zipcode || !this.data.phone || !this.data.email || !this.data.tdate) {
-      console.log('Input the required values.');
       return false;
     }
     return true;
