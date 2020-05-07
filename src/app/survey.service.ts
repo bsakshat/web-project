@@ -6,7 +6,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 
-const SURVEY_URL = `http://35.186.166.84:31000/swe645-spr20-hw3`;
+const SURVEY_URL = `https://s14qifa2sf.execute-api.us-east-1.amazonaws.com/default/Survey`;
 
 @Injectable({
   providedIn: 'root'
