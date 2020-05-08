@@ -16,7 +16,7 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getAllSurveys().subscribe((infos: any) => {
-      this.infos = infos;
+      this.infos = infos.body;
     })
   }
 

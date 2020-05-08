@@ -28,7 +28,7 @@ export class SurveyService {
    public addSurvey(surveydata: Surveydata): Observable<Surveydata> {
      let options = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
      let jsonData = JSON.stringify(surveydata);
-     return this.httpClient.post<Surveydata>(SURVEY_URL + `/addSurvey`, jsonData, options)
+     return this.httpClient.post<Surveydata>(SURVEY_URL, jsonData, options)
      .pipe(
       catchError(this.handleError)
       );

@@ -19,6 +19,7 @@ export class StudentComponent implements OnInit {
 
   constructor(private service: SurveyService, private router: Router) { }
 
+  
   ngOnInit(): void {
   }
 
@@ -58,6 +59,15 @@ export class StudentComponent implements OnInit {
       return;
     }
     this.data.likes = this.like.join();
+    if (!this.data.likes) {
+      this.data.likes = "N/A";
+    }
+    if (!this.data.interest) {
+      this.data.interest = "N/A";
+      }
+    if (!this.data.recom) {
+      this.data.recom = "N/A";
+    }
     this.service.addSurvey(this.data).subscribe(()=>{
       console.log("Survey record added");
     });

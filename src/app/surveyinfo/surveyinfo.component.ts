@@ -19,7 +19,7 @@ export class SurveyinfoComponent implements OnInit {
     this.route.params.subscribe((params) => {
       this.id = params['id'];
       this.service.getSurvey(this.id).subscribe((received: any) => {
-        this.survey = received;
+        this.survey = received.body;
       });
     });
       
